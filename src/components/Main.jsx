@@ -5,9 +5,11 @@ import Navigation from './Navigation'
 export default class Main extends React.Component {
     render() {
         return(
-            <div>
+            <div className="">
                 <Navigation/>
-                {this.props.children}
+                <div className="container">
+                    {this.props.children}
+                </div>
             </div>
         );
     };

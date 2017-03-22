@@ -1,8 +1,17 @@
 @import './base/flexboxgrid.css';
 @import './base/normalize.css';
 
-@import './components/navigation.scss';
 
-.fondo {
-    background: red
+.container {
+    margin-left: 24rem;
 }
+
+//reset
+a {
+    text-decoration: none;
+    color: black;
+}
+ul {
+    list-style-type: none;
+}
+@import './components/navigation.scss';

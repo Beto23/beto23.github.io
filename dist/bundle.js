@@ -13049,9 +13049,13 @@ var Main = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                null,
+                { className: '' },
                 _react2.default.createElement(_Navigation2.default, null),
-                this.props.children
+                _react2.default.createElement(
+                    'div',
+                    { className: 'container' },
+                    this.props.children
+                )
             );
         }
     }]);
@@ -13113,7 +13117,7 @@ var Navigation = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                null,
+                { className: 'navigation' },
                 _react2.default.createElement(
                     'ul',
                     null,
@@ -30111,7 +30115,7 @@ exports.i(__webpack_require__(253), "");
 exports.i(__webpack_require__(254), "");
 
 // module
-exports.push([module.i, "a.active {\n  color: red; }\n\n.fondo {\n  background: red; }\n", ""]);
+exports.push([module.i, ".container {\n  margin-left: 24rem; }\n\na {\n  text-decoration: none;\n  color: black; }\n\nul {\n  list-style-type: none; }\n\na.active {\n  color: green; }\n\n.navigation {\n  position: fixed;\n  bottom: 0;\n  top: 0;\n  width: 370px;\n  background: #d40000; }\n  .navigation ul > li > a {\n    color: white; }\n", ""]);
 
 // exports
 

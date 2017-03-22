@@ -1,3 +1,15 @@
+@import './../base/variables';
 a.active {
-    color: red;
+    color: green;
+}
+
+.navigation {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    width: 370px;
+    background: $nav-background;
+    ul > li > a {
+        color: $nav-items-color;
+    }
 }
