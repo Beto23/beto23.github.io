@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Main from './components/Main'
+
 require('./styles/main.scss');
 
 ReactDOM.render(
-    <p className="fondo">Hello world</p>,
+    <Main/>,
     document.getElementById('my-page')
 );
