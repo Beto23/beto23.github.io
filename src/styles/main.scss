@@ -1,9 +1,18 @@
 @import './base/flexboxgrid.css';
 @import './base/normalize.css';
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+// @import './fonts/beto/beto.css';
+@import '../assets/fonts/beto/beto.css';
+@import './base/variables.scss';
 
+body{
+    font-family: 'Ubuntu', sans-serif;
+}
 
-.container {
-    margin-left: 24rem;
+.wrapper {
+    margin-left: 23rem;
+    padding: 20px;
+    animation: wrapper .7s;
 }
 
 //reset
@@ -13,5 +22,9 @@ a {
 }
 ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 @import './components/navigation.scss';
+@import './components/picture.scss';
+@import './components/navFooter.scss';

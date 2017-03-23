@@ -35,10 +35,20 @@ module.exports = {
             loader: "sass-loader" // compiles Sass to CSS
           }
         ]
+      },
+      {
+        test: /\.(svg|woff|woff2|ttf|eot)$/,
+        exclude: /node:modules/,
+        use: [
+          {
+            // loader: 'file?name=src/assets/fonts/[name].[hash].[ext]?'
+            loader: 'url-loader?limit=100000'
+          }
+        ]
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx', 'css']
   }
 };

@@ -1,5 +1,12 @@
-$myred: #d40000;
+$myred: #FB404B;
+$blue-background: #23CCEF;
+
+
+$facebook: #3b5998;
+$linkedin: #0077b5;
+$twitter: #1da1f2;
 
 // Navigation colors
-$nav-background: $myred;
+$nav-background: $blue-background;
 $nav-items-color: white;
+$nav-background2: linear-gradient(to bottom, $blue-background 0%, rgba(64, 145, 255, 0.7) 100%);
