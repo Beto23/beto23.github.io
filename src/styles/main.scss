@@ -7,12 +7,15 @@
 
 body{
     font-family: 'Ubuntu', sans-serif;
+    background: url(https://subtlepatterns.toptal.io/designers/subtlepatterns/wp-content/themes/tweaker7/images/transp_bg.png);
+
 }
 
 .wrapper {
-    margin-left: 23rem;
+    margin-left: 19rem;
     padding: 20px;
     animation: wrapper .7s;
+    // background: red;
 }
 
 //reset
