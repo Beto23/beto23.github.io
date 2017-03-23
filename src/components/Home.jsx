@@ -5,17 +5,35 @@ export default class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            messaje: `Hi, my name is Jose Albero and I'm a Front-End web developer
-                        based in Saltillo Coahuila, Mexico.
-                      . I like to work with the lastes tools and methodologies by keeping 
-                        to date with current trends.`
+            slide: false
+        }
+        this.handleSlide = this.slide.bind(this);
+    }
+
+    slide() {
+        if (this.state.slide) {
+            $(this.refs.slide).slideDown();
+            this.setState({
+                slide: false
+            });
+        } else {
+            $(this.refs.slide).slideUp();
+            this.setState({
+                slide: true
+            });
+            setTimeout(()=> {
+                window.location.hash = '/contact';
+            }, 1000)
         }
     }
 
     render() {
         return(
             <div>
-                {this.state.messaje}
+                <input type = "button" value = "clickme" onClick = {this.handleSlide}/> 
+                <br />
+                <br />
+                <div className= "sliddde" ref="slide" >Hola</div>
             </div>
         );
     }
