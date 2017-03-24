@@ -58,6 +58,15 @@ module.exports = {
             loader: 'url-loader?limit=100000'
           }
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|ico)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: { limit: 1000} // conver images < 10k to base64 strings
+          }
+        ]
       }
     ]
   },

@@ -6,7 +6,6 @@ import Main from './components/Main';
 import Contact from './components/Contact';
 import Home from './components/Home';
 
-// require('./assets/fonts/beto/beto.css');
 require('./styles/main.scss');
 
 ReactDOM.render(

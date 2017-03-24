@@ -1,39 +1,29 @@
 import React from 'react';
 
+import welcome from './../assets/images/welcome.png';
+import NavPicture from './NavPicture';
+
 export default class Home extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            slide: false
+            message: `I'm a Front-End web developer
+                        based in Saltillo Coahuila, Mexico.
+                      I like to work with the latest tools and methodologies by keeping up
+                        to date with current trends.`
         }
-        this.handleSlide = this.slide.bind(this);
     }
 
-    slide() {
-        if (this.state.slide) {
-            $(this.refs.slide).slideDown();
-            this.setState({
-                slide: false
-            });
-        } else {
-            $(this.refs.slide).slideUp();
-            this.setState({
-                slide: true
-            });
-            setTimeout(()=> {
-                window.location.hash = '/contact';
-            }, 1000)
-        }
-    }
 
     render() {
         return(
-            <div>
-                <input type = "button" value = "clickme" onClick = {this.handleSlide}/> 
-                <br />
-                <br />
-                <div className= "sliddde" ref="slide" >Hola</div>
+            <div className="home row center-xs middle-xs">
+                <div className="home-container">
+                    <img  className="home-container-img" src={welcome} alt=""/>
+                    {/*<NavPicture></NavPicture>*/}
+                    <p className="home-container-text">{this.state.message}</p>
+                </div>
             </div>
         );
     }

@@ -4,6 +4,12 @@ import { Link, IndexLink } from 'react-router'
 import NavPicture from './NavPicture';
 import NavFooter from './NavFooter';
 
+import beto from '../assets/images/alberto.png';
+
+const logo = document.createElement('img');
+logo.src = beto;
+
+
 export default class Navigation extends React.Component {
 
     constructor(props) {
@@ -13,32 +19,35 @@ export default class Navigation extends React.Component {
             name: 'José Alberto Cordoba Lugo',
             job: 'Front-End Web Developer'
         }
+        console.log(logo);
     }
 
-    isActiveFunc = (match, location) => {
-        console.log(match, location)
-        return match
-    }
     render() {
         return(
-            <header>
-                <div className="navigation row center-xs">
-                    <div className="navigation-container">
-                        <div className="navigation-info">
-                            <NavPicture/>
-                            <h3>{this.state.name}</h3>
-                            <p>{this.state.job}</p>
-                        </div>
-                        <ul className="menu">
-                            <li className="menu-text">
-                                <IndexLink to="/" activeClassName="active">Home</IndexLink>
-                            </li>
-                            <li className="menu-text">
-                                <Link activeClassName="active" to='/contact'>Contact</Link>
-                            </li>
-                        </ul>
-                        <NavFooter/>
-                    </div>
+            <header className="row around-xs middle-xs">
+                <div className="logo">
+                    <IndexLink to="/">
+                        <img src={logo.src} alt=""/>
+                    </IndexLink>
+                </div>
+                <div className="navigation col-xs-6">
+                    <ul className="row around-xs menu">
+                        <li className="menu-text">
+                            <Link>About me</Link>
+                        </li>
+                        <li className="menu-text">
+                            <Link>Skills</Link>
+                        </li>
+                        <li className="menu-text">
+                            <Link>Portafolio</Link>
+                        </li>
+                        <li className="menu-text">
+                            <Link activeClassName="active" to="23">Certificaciones</Link>
+                        </li>
+                        <li className="menu-text">
+                            <Link activeClassName="active" to="/contact">Contact</Link>
+                        </li>
+                    </ul>
                 </div>
             </header>
         )

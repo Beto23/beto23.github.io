@@ -1,0 +1,19 @@
+.home {
+    height: 100vh;
+    background: $default-background;
+    .home-container {
+        .home-container-img {
+            height: 11em;
+            width: 48em;
+        }
+    }
+    .home-container-text {
+        width: 25em;
+        margin: 0 auto;
+        font-size: 1.2rem;
+    }
+}
+
+.row {
+    margin: 0;
+}

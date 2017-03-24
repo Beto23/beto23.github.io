@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 267);
+/******/ 	return __webpack_require__(__webpack_require__.s = 268);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -12934,7 +12934,6 @@ var _Home2 = _interopRequireDefault(_Home);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// require('./assets/fonts/beto/beto.css');
 __webpack_require__(262);
 
 _reactDom2.default.render(_react2.default.createElement(
@@ -29884,13 +29883,9 @@ var Contact = function (_React$Component) {
     }
 
     _createClass(Contact, [{
-        key: 'render',
+        key: "render",
         value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                'Contact Component'
-            );
+            return _react2.default.createElement("div", { className: "contact" });
         }
     }]);
 
@@ -29904,7 +29899,7 @@ exports.default = Contact;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function($) {
+
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -29915,6 +29910,14 @@ var _createClass = function () { function defineProperties(target, props) { for 
 var _react = __webpack_require__(4);
 
 var _react2 = _interopRequireDefault(_react);
+
+var _welcome = __webpack_require__(269);
+
+var _welcome2 = _interopRequireDefault(_welcome);
+
+var _NavPicture = __webpack_require__(253);
+
+var _NavPicture2 = _interopRequireDefault(_NavPicture);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29933,43 +29936,26 @@ var Home = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
 
         _this.state = {
-            slide: false
+            message: 'I\'m a Front-End web developer\n                        based in Saltillo Coahuila, Mexico.\n                      I like to work with the latest tools and methodologies by keeping up\n                        to date with current trends.'
         };
-        _this.handleSlide = _this.slide.bind(_this);
         return _this;
     }
 
     _createClass(Home, [{
-        key: 'slide',
-        value: function slide() {
-            if (this.state.slide) {
-                $(this.refs.slide).slideDown();
-                this.setState({
-                    slide: false
-                });
-            } else {
-                $(this.refs.slide).slideUp();
-                this.setState({
-                    slide: true
-                });
-                setTimeout(function () {
-                    window.location.hash = '/contact';
-                }, 1000);
-            }
-        }
-    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                null,
-                _react2.default.createElement('input', { type: 'button', value: 'clickme', onClick: this.handleSlide }),
-                _react2.default.createElement('br', null),
-                _react2.default.createElement('br', null),
+                { className: 'home row center-xs middle-xs' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'sliddde', ref: 'slide' },
-                    'Hola'
+                    { className: 'home-container' },
+                    _react2.default.createElement('img', { className: 'home-container-img', src: _welcome2.default, alt: '' }),
+                    _react2.default.createElement(
+                        'p',
+                        { className: 'home-container-text' },
+                        this.state.message
+                    )
                 )
             );
         }
@@ -29979,7 +29965,6 @@ var Home = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Home;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(266)))
 
 /***/ }),
 /* 251 */
@@ -30206,6 +30191,10 @@ var _NavFooter = __webpack_require__(252);
 
 var _NavFooter2 = _interopRequireDefault(_NavFooter);
 
+var _alberto = __webpack_require__(270);
+
+var _alberto2 = _interopRequireDefault(_alberto);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -30213,6 +30202,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var logo = document.createElement('img');
+logo.src = _alberto2.default;
 
 var Navigation = function (_React$Component) {
     _inherits(Navigation, _React$Component);
@@ -30222,16 +30214,12 @@ var Navigation = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (Navigation.__proto__ || Object.getPrototypeOf(Navigation)).call(this, props));
 
-        _this.isActiveFunc = function (match, location) {
-            console.log(match, location);
-            return match;
-        };
-
         console.log(props, 'props');
         _this.state = {
             name: 'José Alberto Cordoba Lugo',
             job: 'Front-End Web Developer'
         };
+        console.log(logo);
         return _this;
     }
 
@@ -30240,51 +30228,67 @@ var Navigation = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 'header',
-                null,
+                { className: 'row around-xs middle-xs' },
                 _react2.default.createElement(
                     'div',
-                    { className: 'navigation row center-xs' },
+                    { className: 'logo' },
                     _react2.default.createElement(
-                        'div',
-                        { className: 'navigation-container' },
+                        _reactRouter.IndexLink,
+                        { to: '/' },
+                        _react2.default.createElement('img', { src: logo.src, alt: '' })
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { className: 'navigation col-xs-6' },
+                    _react2.default.createElement(
+                        'ul',
+                        { className: 'row around-xs menu' },
                         _react2.default.createElement(
-                            'div',
-                            { className: 'navigation-info' },
-                            _react2.default.createElement(_NavPicture2.default, null),
+                            'li',
+                            { className: 'menu-text' },
                             _react2.default.createElement(
-                                'h3',
+                                _reactRouter.Link,
                                 null,
-                                this.state.name
-                            ),
-                            _react2.default.createElement(
-                                'p',
-                                null,
-                                this.state.job
+                                'About me'
                             )
                         ),
                         _react2.default.createElement(
-                            'ul',
-                            { className: 'menu' },
+                            'li',
+                            { className: 'menu-text' },
                             _react2.default.createElement(
-                                'li',
-                                { className: 'menu-text' },
-                                _react2.default.createElement(
-                                    _reactRouter.IndexLink,
-                                    { to: '/', activeClassName: 'active' },
-                                    'Home'
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'li',
-                                { className: 'menu-text' },
-                                _react2.default.createElement(
-                                    _reactRouter.Link,
-                                    { activeClassName: 'active', to: '/contact' },
-                                    'Contact'
-                                )
+                                _reactRouter.Link,
+                                null,
+                                'Skills'
                             )
                         ),
-                        _react2.default.createElement(_NavFooter2.default, null)
+                        _react2.default.createElement(
+                            'li',
+                            { className: 'menu-text' },
+                            _react2.default.createElement(
+                                _reactRouter.Link,
+                                null,
+                                'Portafolio'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            { className: 'menu-text' },
+                            _react2.default.createElement(
+                                _reactRouter.Link,
+                                { activeClassName: 'active', to: '23' },
+                                'Certificaciones'
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'li',
+                            { className: 'menu-text' },
+                            _react2.default.createElement(
+                                _reactRouter.Link,
+                                { activeClassName: 'active', to: '/contact' },
+                                'Contact'
+                            )
+                        )
                     )
                 )
             );
@@ -30305,10 +30309,11 @@ exports = module.exports = __webpack_require__(34)(undefined);
 exports.i(__webpack_require__(257), "");
 exports.i(__webpack_require__(258), "");
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Ubuntu);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Jim+Nightshade);", ""]);
 exports.i(__webpack_require__(256), "");
 
 // module
-exports.push([module.i, "body {\n  font-family: 'Ubuntu', sans-serif;\n  background: url(https://subtlepatterns.toptal.io/designers/subtlepatterns/wp-content/themes/tweaker7/images/transp_bg.png); }\n\n.wrapper {\n  margin-left: 19rem;\n  padding: 20px;\n  animation: wrapper .7s; }\n\na {\n  text-decoration: none;\n  color: black; }\n\nul {\n  list-style-type: none;\n  margin: 0;\n  padding: 0; }\n\nheader {\n  position: fixed;\n  bottom: 0;\n  top: 0;\n  background: url(https://cdn.pixabay.com/photo/2013/11/18/20/14/virginia-212786_960_720.jpg);\n  background-size: 150% 150%;\n  width: 306px; }\n  header .navigation {\n    width: 316px;\n    height: 100%;\n    padding: 2em;\n    background: linear-gradient(to bottom, #23CCEF 0%, rgba(64, 145, 255, 0.7) 100%); }\n    header .navigation .menu-text {\n      margin-bottom: .5em; }\n    header .navigation .menu > .menu-text > a {\n      color: white;\n      font-size: 1.5em;\n      display: block;\n      padding: .4em 0;\n      border-radius: 7px; }\n    header .navigation .menu > .menu-text a:hover {\n      background: rgba(255, 255, 255, 0.13);\n      opacity: 1;\n      color: #FFFFFF; }\n    header .navigation .active {\n      color: #FFFFFF;\n      opacity: 1;\n      background: rgba(255, 255, 255, 0.23); }\n    header .navigation .navigation-container {\n      position: relative; }\n      header .navigation .navigation-container .navigation-info {\n        border-bottom: 1px solid rgba(255, 255, 255, 0.2);\n        border-top: 1px solid rgba(255, 255, 255, 0.2);\n        padding: 1em 0;\n        color: white;\n        margin-bottom: 2em; }\n\n.img-circle {\n  border-radius: 50%;\n  max-width: 138px;\n  height: auto;\n  border: 4px solid rgba(255, 255, 255, 0.3); }\n\n.navFooter {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: white;\n  padding: 1em;\n  border-radius: 36px; }\n  .navFooter .social-networks {\n    font-size: 1.5em;\n    cursor: pointer; }\n  .navFooter .icon-facebook-square {\n    color: #3b5998; }\n  .navFooter .icon-twitter {\n    color: #1da1f2; }\n  .navFooter .icon-linkedin {\n    color: #0077b5; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: 'Ubuntu', sans-serif;\n  background: #26292b;\n  color: white; }\n\n.wrapper {\n  animation: wrapper .7s; }\n\na {\n  text-decoration: none;\n  color: black; }\n\nul {\n  list-style-type: none;\n  margin: 0;\n  padding: 0; }\n\nheader {\n  position: fixed;\n  top: 0;\n  right: 0;\n  left: 0;\n  height: 5em;\n  background: none; }\n  header .logo img {\n    width: 9em;\n    height: 4em; }\n  header .navigation .menu > .menu-text > a {\n    color: white;\n    font-size: 1.2em;\n    display: block;\n    padding: .4em 0;\n    border-radius: 7px; }\n  header .navigation .menu > .menu-text a:hover {\n    text-decoration: underline;\n    color: #FFFFFF; }\n  header .navigation .active {\n    text-decoration: underline;\n    font-weight: bold; }\n\n.img-circle {\n  border-radius: 50%;\n  max-width: 138px;\n  height: auto;\n  border: 4px solid rgba(255, 255, 255, 0.3); }\n\n.navFooter {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background: white;\n  padding: 1em;\n  border-radius: 36px; }\n  .navFooter .social-networks {\n    font-size: 1.5em;\n    cursor: pointer; }\n  .navFooter .icon-facebook-square {\n    color: #3b5998; }\n  .navFooter .icon-twitter {\n    color: #1da1f2; }\n  .navFooter .icon-linkedin {\n    color: #0077b5; }\n\n.home {\n  height: 100vh;\n  background: #26292b; }\n  .home .home-container .home-container-img {\n    height: 11em;\n    width: 48em; }\n  .home .home-container-text {\n    width: 25em;\n    margin: 0 auto;\n    font-size: 1.2rem; }\n\n.row {\n  margin: 0; }\n", ""]);
 
 // exports
 
@@ -30322,7 +30327,7 @@ exports = module.exports = __webpack_require__(34)(undefined);
 
 
 // module
-exports.push([module.i, "@font-face {\n  font-family: beto;\n  src:  url(" + __webpack_require__(113) + ");\n  src:  url(" + __webpack_require__(113) + ") format('embedded-opentype'),\n    url(" + __webpack_require__(264) + ") format('truetype'),\n    url(" + __webpack_require__(265) + ") format('woff'),\n    url(" + __webpack_require__(263) + ") format('svg');\n  font-weight: normal;\n  font-style: normal;\n}\n\n[class^=\"icon-\"], [class*=\" icon-\"] {\n  /* use !important to prevent issues with browser extensions that change fonts */\n  font-family: beto !important;\n  speak: none;\n  font-style: normal;\n  font-weight: normal;\n  font-variant: normal;\n  text-transform: none;\n  line-height: 1;\n\n  /* Better Font Rendering =========== */\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.icon-github:before {\n  content: \"\\E900\";\n}\n.icon-facebook-square:before {\n  content: \"\\E901\";\n}\n.icon-twitter:before {\n  content: \"\\EA96\";\n}\n.icon-linkedin:before {\n  content: \"\\EAC9\";\n}\n\n", ""]);
+exports.push([module.i, "@font-face {\n  font-family: beto;\n  src:  url(" + __webpack_require__(113) + ");\n  src:  url(" + __webpack_require__(113) + ") format('embedded-opentype'),\n    url(" + __webpack_require__(265) + ") format('truetype'),\n    url(" + __webpack_require__(266) + ") format('woff'),\n    url(" + __webpack_require__(264) + ") format('svg');\n  font-weight: normal;\n  font-style: normal;\n}\n\n[class^=\"icon-\"], [class*=\" icon-\"] {\n  /* use !important to prevent issues with browser extensions that change fonts */\n  font-family: beto !important;\n  speak: none;\n  font-style: normal;\n  font-weight: normal;\n  font-variant: normal;\n  text-transform: none;\n  line-height: 1;\n\n  /* Better Font Rendering =========== */\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n.icon-github:before {\n  content: \"\\E900\";\n}\n.icon-facebook-square:before {\n  content: \"\\E901\";\n}\n.icon-twitter:before {\n  content: \"\\EA96\";\n}\n.icon-linkedin:before {\n  content: \"\\EAC9\";\n}\n\n", ""]);
 
 // exports
 
@@ -30655,36 +30660,44 @@ if(false) {
 }
 
 /***/ }),
-/* 263 */
+/* 263 */,
+/* 264 */
 /***/ (function(module, exports) {
 
 module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiID4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8bWV0YWRhdGE+R2VuZXJhdGVkIGJ5IEljb01vb248L21ldGFkYXRhPgo8ZGVmcz4KPGZvbnQgaWQ9Imljb21vb24iIGhvcml6LWFkdi14PSIxMDI0Ij4KPGZvbnQtZmFjZSB1bml0cy1wZXItZW09IjEwMjQiIGFzY2VudD0iOTYwIiBkZXNjZW50PSItNjQiIC8+CjxtaXNzaW5nLWdseXBoIGhvcml6LWFkdi14PSIxMDI0IiAvPgo8Z2x5cGggdW5pY29kZT0iJiN4MjA7IiBob3Jpei1hZHYteD0iNTEyIiBkPSIiIC8+CjxnbHlwaCB1bmljb2RlPSImI3hlOTAwOyIgZ2x5cGgtbmFtZT0iZ2l0aHViIiBob3Jpei1hZHYteD0iODc4IiBkPSJNNDM4Ljg1NyA4NzcuNzE0YzI0Mi4yODYgMCA0MzguODU3LTE5Ni41NzEgNDM4Ljg1Ny00MzguODU3IDAtMTkzLjcxNC0xMjUuNzE0LTM1OC4yODYtMzAwLTQxNi41NzEtMjIuMjg2LTQtMzAuMjg2IDkuNzE0LTMwLjI4NiAyMS4xNDMgMCAxNC4yODYgMC41NzEgNjEuNzE0IDAuNTcxIDEyMC41NzEgMCA0MS4xNDMtMTMuNzE0IDY3LjQyOS0yOS43MTQgODEuMTQzIDk3LjcxNCAxMC44NTcgMjAwLjU3MSA0OCAyMDAuNTcxIDIxNi41NzEgMCA0OC0xNy4xNDMgODYuODU3LTQ1LjE0MyAxMTcuNzE0IDQuNTcxIDExLjQyOSAxOS40MjkgNTYtNC41NzEgMTE2LjU3MS0zNi41NzEgMTEuNDI5LTEyMC41NzEtNDUuMTQzLTEyMC41NzEtNDUuMTQzLTM0Ljg1NyA5LjcxNC03Mi41NzEgMTQuODU3LTEwOS43MTQgMTQuODU3cy03NC44NTctNS4xNDMtMTA5LjcxNC0xNC44NTdjMCAwLTg0IDU2LjU3MS0xMjAuNTcxIDQ1LjE0My0yNC02MC41NzEtOS4xNDMtMTA1LjE0My00LjU3MS0xMTYuNTcxLTI4LTMwLjg1Ny00NS4xNDMtNjkuNzE0LTQ1LjE0My0xMTcuNzE0IDAtMTY4IDEwMi4yODYtMjA1LjcxNCAyMDAtMjE2LjU3MS0xMi41NzEtMTEuNDI5LTI0LTMwLjg1Ny0yOC01OC44NTctMjUuMTQzLTExLjQyOS04OS4xNDMtMzAuODU3LTEyNy40MjkgMzYuNTcxLTI0IDQxLjcxNC02Ny40MjkgNDUuMTQzLTY3LjQyOSA0NS4xNDMtNDIuODU3IDAuNTcxLTIuODU3LTI2Ljg1Ny0yLjg1Ny0yNi44NTcgMjguNTcxLTEzLjE0MyA0OC41NzEtNjQgNDguNTcxLTY0IDI1LjcxNC03OC4yODYgMTQ4LTUyIDE0OC01MiAwLTM2LjU3MSAwLjU3MS03MC44NTcgMC41NzEtODEuNzE0IDAtMTEuNDI5LTgtMjUuMTQzLTMwLjI4Ni0yMS4xNDMtMTc0LjI4NiA1OC4yODYtMzAwIDIyMi44NTctMzAwIDQxNi41NzEgMCAyNDIuMjg2IDE5Ni41NzEgNDM4Ljg1NyA0MzguODU3IDQzOC44NTd6TTE2Ni4yODYgMjQ3LjQyOGMxLjE0MyAyLjI4Ni0wLjU3MSA1LjE0My00IDYuODU3LTMuNDI5IDEuMTQzLTYuMjg2IDAuNTcxLTcuNDI5LTEuMTQzLTEuMTQzLTIuMjg2IDAuNTcxLTUuMTQzIDQtNi44NTcgMi44NTctMS43MTQgNi4yODYtMS4xNDMgNy40MjkgMS4xNDN6TTE4NCAyMjhjMi4yODYgMS43MTQgMS43MTQgNS43MTQtMS4xNDMgOS4xNDMtMi44NTcgMi44NTctNi44NTcgNC05LjE0MyAxLjcxNC0yLjI4Ni0xLjcxNC0xLjcxNC01LjcxNCAxLjE0My05LjE0MyAyLjg1Ny0yLjg1NyA2Ljg1Ny00IDkuMTQzLTEuNzE0ek0yMDEuMTQzIDIwMi4yODZjMi44NTcgMi4yODYgMi44NTcgNi44NTcgMCAxMC44NTctMi4yODYgNC02Ljg1NyA1LjcxNC05LjcxNCAzLjQyOS0yLjg1Ny0xLjcxNC0yLjg1Ny02LjI4NiAwLTEwLjI4NnM3LjQyOS01LjcxNCA5LjcxNC00ek0yMjUuMTQzIDE3OC4yODZjMi4yODYgMi4yODYgMS4xNDMgNy40MjktMi4yODYgMTAuODU3LTQgNC05LjE0MyA0LjU3MS0xMS40MjkgMS43MTQtMi44NTctMi4yODYtMS43MTQtNy40MjkgMi4yODYtMTAuODU3IDQtNCA5LjE0My00LjU3MSAxMS40MjktMS43MTR6TTI1Ny43MTQgMTY0YzEuMTQzIDMuNDI5LTIuMjg2IDcuNDI5LTcuNDI5IDkuMTQzLTQuNTcxIDEuMTQzLTkuNzE0LTAuNTcxLTEwLjg1Ny00czIuMjg2LTcuNDI5IDcuNDI5LTguNTcxYzQuNTcxLTEuNzE0IDkuNzE0IDAgMTAuODU3IDMuNDI5ek0yOTMuNzE0IDE2MS4xNDNjMCA0LTQuNTcxIDYuODU3LTkuNzE0IDYuMjg2LTUuMTQzIDAtOS4xNDMtMi44NTctOS4xNDMtNi4yODYgMC00IDQtNi44NTcgOS43MTQtNi4yODYgNS4xNDMgMCA5LjE0MyAyLjg1NyA5LjE0MyA2LjI4NnpNMzI2Ljg1NyAxNjYuODU3Yy0wLjU3MSAzLjQyOS01LjE0MyA1LjcxNC0xMC4yODYgNS4xNDMtNS4xNDMtMS4xNDMtOC41NzEtNC41NzEtOC04LjU3MSAwLjU3MS0zLjQyOSA1LjE0My01LjcxNCAxMC4yODYtNC41NzFzOC41NzEgNC41NzEgOCA4eiIgLz4KPGdseXBoIHVuaWNvZGU9IiYjeGU5MDE7IiBnbHlwaC1uYW1lPSJmYWNlYm9vay1zcXVhcmUiIGhvcml6LWFkdi14PSI4NzgiIGQ9Ik03MTMuMTQzIDg3Ny43MTRjOTAuODU3IDAgMTY0LjU3MS03My43MTQgMTY0LjU3MS0xNjQuNTcxdi01NDguNTcxYzAtOTAuODU3LTczLjcxNC0xNjQuNTcxLTE2NC41NzEtMTY0LjU3MWgtMTA3LjQyOXYzNDBoMTEzLjcxNGwxNy4xNDMgMTMyLjU3MWgtMTMwLjg1N3Y4NC41NzFjMCAzOC4yODYgMTAuMjg2IDY0IDY1LjcxNCA2NGw2OS43MTQgMC41NzF2MTE4LjI4NmMtMTIgMS43MTQtNTMuNzE0IDUuMTQzLTEwMS43MTQgNS4xNDMtMTAxLjE0MyAwLTE3MC44NTctNjEuNzE0LTE3MC44NTctMTc0Ljg1N3YtOTcuNzE0aC0xMTQuMjg2di0xMzIuNTcxaDExNC4yODZ2LTM0MGgtMzA0Yy05MC44NTcgMC0xNjQuNTcxIDczLjcxNC0xNjQuNTcxIDE2NC41NzF2NTQ4LjU3MWMwIDkwLjg1NyA3My43MTQgMTY0LjU3MSAxNjQuNTcxIDE2NC41NzFoNTQ4LjU3MXoiIC8+CjxnbHlwaCB1bmljb2RlPSImI3hlYTk2OyIgZ2x5cGgtbmFtZT0idHdpdHRlciIgZD0iTTEwMjQgNzMzLjZjLTM3LjYtMTYuOC03OC4yLTI4LTEyMC42LTMzIDQzLjQgMjYgNzYuNiA2Ny4yIDkyLjQgMTE2LjItNDAuNi0yNC04NS42LTQxLjYtMTMzLjQtNTEtMzguNCA0MC44LTkzIDY2LjItMTUzLjQgNjYuMi0xMTYgMC0yMTAtOTQtMjEwLTIxMCAwLTE2LjQgMS44LTMyLjQgNS40LTQ3LjgtMTc0LjYgOC44LTMyOS40IDkyLjQtNDMzIDIxOS42LTE4LTMxLTI4LjQtNjcuMi0yOC40LTEwNS42IDAtNzIuOCAzNy0xMzcuMiA5My40LTE3NC44LTM0LjQgMS02Ni44IDEwLjYtOTUuMiAyNi4yIDAtMC44IDAtMS44IDAtMi42IDAtMTAxLjggNzIuNC0xODYuOCAxNjguNi0yMDYtMTcuNi00LjgtMzYuMi03LjQtNTUuNC03LjQtMTMuNiAwLTI2LjYgMS40LTM5LjYgMy44IDI2LjgtODMuNCAxMDQuNC0xNDQuMiAxOTYuMi0xNDYtNzItNTYuNC0xNjIuNC05MC0yNjEtOTAtMTcgMC0zMy42IDEtNTAuMiAzIDkzLjItNTkuOCAyMDMuNi05NC40IDMyMi4yLTk0LjQgMzg2LjQgMCA1OTcuOCAzMjAuMiA1OTcuOCA1OTcuOCAwIDkuMi0wLjIgMTguMi0wLjYgMjcuMiA0MSAyOS40IDc2LjYgNjYuNCAxMDQuOCAxMDguNnoiIC8+CjxnbHlwaCB1bmljb2RlPSImI3hlYWM5OyIgZ2x5cGgtbmFtZT0ibGlua2VkaW4iIGQ9Ik05MjggOTYwaC04MzJjLTUyLjggMC05Ni00My4yLTk2LTk2di04MzJjMC01Mi44IDQzLjItOTYgOTYtOTZoODMyYzUyLjggMCA5NiA0My4yIDk2IDk2djgzMmMwIDUyLjgtNDMuMiA5Ni05NiA5NnpNMzg0IDEyOGgtMTI4djQ0OGgxMjh2LTQ0OHpNMzIwIDY0MGMtMzUuNCAwLTY0IDI4LjYtNjQgNjRzMjguNiA2NCA2NCA2NGMzNS40IDAgNjQtMjguNiA2NC02NHMtMjguNi02NC02NC02NHpNODMyIDEyOGgtMTI4djI1NmMwIDM1LjQtMjguNiA2NC02NCA2NHMtNjQtMjguNi02NC02NHYtMjU2aC0xMjh2NDQ4aDEyOHYtNzkuNGMyNi40IDM2LjIgNjYuOCA3OS40IDExMiA3OS40IDc5LjYgMCAxNDQtNzEuNiAxNDQtMTYwdi0yODh6IiAvPgo8L2ZvbnQ+PC9kZWZzPjwvc3ZnPg=="
 
 /***/ }),
-/* 264 */
+/* 265 */
 /***/ (function(module, exports) {
 
 module.exports = "data:application/x-font-ttf;base64,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"
 
 /***/ }),
-/* 265 */
+/* 266 */
 /***/ (function(module, exports) {
 
 module.exports = "data:application/font-woff;base64,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"
 
 /***/ }),
-/* 266 */
-/***/ (function(module, exports) {
-
-module.exports = jQuery;
-
-/***/ }),
-/* 267 */
+/* 267 */,
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(115);
 module.exports = __webpack_require__(114);
 
+
+/***/ }),
+/* 269 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "3a94de3ccd714795a2b2f3d1a0818c67.png";
+
+/***/ }),
+/* 270 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "53b5186a1b472815a33ff7b6e8df9c0c.png";
 
 /***/ })
 /******/ ]);

@@ -2,47 +2,32 @@
 
 header {
     position: fixed;
-    bottom: 0;
     top: 0;
-    background: url(https://cdn.pixabay.com/photo/2013/11/18/20/14/virginia-212786_960_720.jpg);
-    background-size: 150% 150%;
-    width: 306px;
-    .navigation {
-        width: 316px;
-        height: 100%;
-        padding: 2em;
-        background: $nav-background2;
-        .menu-text {
-            margin-bottom: .5em;
+    right: 0;
+    left: 0;
+    height: 5em;
+    background: none;
+    .logo {
+        img {
+            width: 9em;
+            height: 4em;
         }
+    }
+    .navigation {
         .menu > .menu-text > a {
             color: $nav-items-color;
-            font-size: 1.5em;
+            font-size: 1.2em;
             display: block;
             padding: .4em 0;
             border-radius: 7px;
         }
         .menu > .menu-text a:hover {
-            background: rgba(255, 255, 255, 0.13);
-            opacity: 1;
+            text-decoration: underline;
             color: #FFFFFF;
         }
         .active {
-            // color: green;
-            // font-weight: bold;
-            color: #FFFFFF;
-            opacity: 1;
-            background: rgba(255, 255, 255, 0.23);
-        }
-        .navigation-container {
-            position: relative;
-            .navigation-info {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-                border-top: 1px solid rgba(255, 255, 255, 0.2);
-                padding: 1em 0;
-                color: white;
-                margin-bottom: 2em;
-            }
+            text-decoration: underline;
+            font-weight: bold;
         }
     }
 }
