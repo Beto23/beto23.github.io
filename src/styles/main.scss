@@ -2,6 +2,7 @@
 @import './base/normalize.css';
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 @import url('https://fonts.googleapis.com/css?family=Jim+Nightshade');
+@import '../assets/fonts/fonts.css';
 
 @import '../assets/fonts/beto/beto.css';
 @import './base/variables.scss';
@@ -33,3 +34,5 @@ ul {
 @import './components/picture.scss';
 @import './components/navFooter.scss';
 @import './components/home.scss';
+@import './components/about.scss';
+@import './components/gallery.scss';

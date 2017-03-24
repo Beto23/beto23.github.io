@@ -1,0 +1,28 @@
+.about {
+    // background: #24637d;
+    // height: $height-all;
+    .about-container {
+        h2 {
+            margin: 0;
+            text-align: center;
+            font-size: 5em;
+            font-family: humblleRought, Arial, Helvetica, sans-serif;
+        }
+        .slide {
+            padding-top: 5em;
+            background: #24637d;
+            height: $height-all;
+            .text {
+                text-align: justify;
+                font-size: 1.5rem;
+            }
+            .map-img{ 
+                height: 26em;
+                width: 25em;
+            }
+            .map{
+                text-align: center;
+            }
+        }
+    }
+}

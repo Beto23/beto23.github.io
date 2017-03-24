@@ -33,7 +33,7 @@ export default class Navigation extends React.Component {
                 <div className="navigation col-xs-6">
                     <ul className="row around-xs menu">
                         <li className="menu-text">
-                            <Link>About me</Link>
+                            <Link activeClassName="active" to="/about">About me</Link>
                         </li>
                         <li className="menu-text">
                             <Link>Skills</Link>

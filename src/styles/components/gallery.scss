@@ -1,0 +1,25 @@
+.gallery {
+    .gallery-container {
+        position: relative;
+        width: 14em;
+        img {
+            height: 13em;
+            width: 14em;
+        }
+    }
+    .gallery-container::after {
+        content: '';
+        background: rgba(53, 49, 49, 0.7);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        transition: all ease .3s;
+    }
+    .gallery-container:hover::after {
+        content: '';
+        background: none;
+        transition: all ease .3s;
+    }
+}

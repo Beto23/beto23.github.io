@@ -54,17 +54,15 @@ module.exports = {
         exclude: /node:modules/,
         use: [
           {
-            // loader: 'file?name=src/assets/fonts/[name].[hash].[ext]?'
-            loader: 'url-loader?limit=100000'
+            loader: 'url-loader?limit=100000&name=fonts/[name].[ext]'
           }
         ]
       },
       {
-        test: /\.(png|jpe?g|gif|ico)$/,
+        test: /\.(png|jpe?g|gif|ico|JPG)$/,
         use: [
           {
-            loader: 'url-loader',
-            options: { limit: 1000} // conver images < 10k to base64 strings
+            loader: 'url-loader?limit=1000&name=images/[name].[ext]',
           }
         ]
       }
