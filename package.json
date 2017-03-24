@@ -6,7 +6,9 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prod": "npm run clean && NODE_ENV=production webpack -p",
+    "clean": "rimraf ./dist/*"
   },
   "author": "Jose Alberto Cordoba Lugo",
   "license": "ISC",
@@ -25,12 +27,15 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-2": "^6.13.0",
     "css-loader": "^0.27.3",
+    "extract-text-webpack-plugin": "^2.0.0-rc.0",
     "file-loader": "^0.10.1",
+    "html-webpack-plugin": "^2.26.0",
     "jquery": "^2.2.1",
     "node-sass": "^3.4.2",
     "postcss-loader": "^0.9.1",
     "react-addons": "^0.9.1-deprecated",
     "react-hot-loader": "^3.0.0-beta.6",
+    "rimraf": "^2.6.1",
     "sass-loader": "^3.1.2",
     "script-loader": "^0.6.1",
     "style-loader": "^0.13.1",

@@ -1,5 +1,17 @@
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 var path = require('path');
-const webpack = require('webpack')
+
+var isProd = process.env.NODE_ENV === 'production'; //true or false
+var cssDev = ['style-loader', 'css-loader', 'sass-loader'];
+var cssProd = ExtractTextPlugin.extract({
+    fallback: 'style-loader',
+    loader: ['css-loader','sass-loader'],
+    publicPath: '/dist'
+})
+var cssConfig = isProd ? cssProd : cssDev;
+
 
 module.exports = {
   entry: [
@@ -18,7 +30,18 @@ module.exports = {
       new webpack.ProvidePlugin({
           '$': 'jquery',
           'jQuery': 'jquery'
-      })
+      }),
+      new HtmlWebpackPlugin({
+          hash: true,
+          template: './src/index.html'
+      }),
+      new ExtractTextPlugin({
+          filename: 'app.css',
+          disable: !isProd,
+          allChunks: true
+      }),
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NamedModulesPlugin()
   ],
   devtool: "source-map",
   module: {
@@ -37,17 +60,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          {
-            loader: "style-loader" // creates style nodes from JS strings
-          },
-          {
-            loader: "css-loader" // translates CSS into CommonJS
-          },
-          {
-            loader: "sass-loader" // compiles Sass to CSS
-          }
-        ]
+        use: cssConfig
       },
       {
         test: /\.(svg|woff|woff2|ttf|eot)$/,
