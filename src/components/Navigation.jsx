@@ -42,7 +42,7 @@ export default class Navigation extends React.Component {
                             <Link>Portafolio</Link>
                         </li>
                         <li className="menu-text">
-                            <Link activeClassName="active" to="23">Certificaciones</Link>
+                            <Link activeClassName="active" to="23">Certifications</Link>
                         </li>
                         <li className="menu-text">
                             <Link activeClassName="active" to="/contact">Contact</Link>

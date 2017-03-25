@@ -10,18 +10,27 @@
         }
         .slide {
             padding-top: 5em;
-            background: #24637d;
+            background: #007bc5;
             height: $height-all;
-            .text {
-                text-align: justify;
-                font-size: 1.5rem;
-            }
-            .map-img{ 
-                height: 26em;
-                width: 25em;
-            }
-            .map{
-                text-align: center;
+            .slide-container {
+                width: 100%;
+                // flex-direction: column;
+                .text {
+                    text-align: center;
+                    font-size: 1.5rem;
+                    width: 22em;
+                }
+                .picture {
+                    border-radius: 50%;
+                    width: 14em;
+                    height: 14em;
+                }
+                .gallery-container, .gallery-container > img {
+                    width: 20em;
+                }
+                .gallery-container {
+                    margin-bottom: .3em;
+                }
             }
         }
     }

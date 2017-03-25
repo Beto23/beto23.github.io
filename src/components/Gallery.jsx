@@ -16,7 +16,7 @@ export default class Gallery extends React.Component {
                     )
                 })
         return(
-            <div className={"gallery row " + this.props.class}>
+            <div className={"gallery row " + this.props.class} style={this.props.style}>
                 {img}
             </div>
         );

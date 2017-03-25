@@ -87,7 +87,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "dist"), //Tell the server where to serve content from.
     compress: true,
-    port: 9000
-    //host: "0.0.0.0" //server to be accessible externally
+    port: 9000,
+    host: "0.0.0.0" //server to be accessible externally
   }
 };
