@@ -6,7 +6,7 @@ header {
     right: 0;
     left: 0;
     height: 5em;
-    background: none;
+    background: white;
     .logo {
         img {
             width: 9em;
@@ -15,7 +15,7 @@ header {
     }
     .navigation {
         .menu > .menu-text > a {
-            color: $nav-items-color;
+            color: black;
             font-size: 1.2em;
             display: block;
             padding: .4em 0;
@@ -23,7 +23,7 @@ header {
         }
         .menu > .menu-text a:hover {
             text-decoration: underline;
-            color: #FFFFFF;
+            // color: #FFFFFF;
         }
         .active {
             text-decoration: underline;

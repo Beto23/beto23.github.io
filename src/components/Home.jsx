@@ -1,6 +1,6 @@
 import React from 'react';
 
-import welcome from './../assets/images/welcome.png';
+import welcome from './../assets/images/welcome2.png';
 import NavPicture from './NavPicture';
 
 export default class Home extends React.Component {
