@@ -6,6 +6,7 @@ import Main from './components/Main';
 import Contact from './components/Contact';
 import Home from './components/Home';
 import About from './components/About';
+import Certifications from './components/Certifications';
 
 require('./styles/main.scss');
 
@@ -14,6 +15,7 @@ ReactDOM.render(
         <Route path="/" component={Main}>
             <Route path="/contact" component={Contact}></Route>
             <Route path="/about" component={About}></Route>
+            <Route path="/certifications" component={Certifications}></Route>
             <IndexRoute component={Home}></IndexRoute>
         </Route>
     </Router>,
