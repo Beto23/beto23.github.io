@@ -76,6 +76,12 @@ module.exports = {
         use: [
             'file-loader?limit=1000&name=images/[name].[ext]'
         ]
+      },
+      {
+        test: /\.mp3$/,
+        use: [
+          'file-loader?limit=1000&name=audio/[name].[ext]'
+        ]
       }
     ]
   },
