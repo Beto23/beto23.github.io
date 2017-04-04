@@ -24,11 +24,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-map-marker:before {
+  content: "\e902";
+}
 .icon-github:before {
   content: "\e900";
 }
 .icon-facebook-square:before {
   content: "\e901";
+}
+.icon-volume-high:before {
+  content: "\ea26";
+}
+.icon-volume-mute:before {
+  content: "\ea29";
 }
 .icon-twitter:before {
   content: "\ea96";
