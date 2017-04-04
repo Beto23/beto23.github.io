@@ -6,6 +6,7 @@ import welcome from './../assets/images/welcome2.png';
 import NavPicture from './NavPicture';
 import saturno from '../assets/audio/saturno.mp3';
 import Audio from './audio';
+import sky from './../assets/images/sky1.jpg';
 
 export default class Home extends React.Component {
 
@@ -22,7 +23,7 @@ export default class Home extends React.Component {
 
     render() {
         return(
-            <div className="home row center-xs middle-xs">
+            <div className="home row center-xs middle-xs" style={{backgroundImage: 'url(' + sky + ')'}}>
                 <Sky></Sky>
                 <Audio isAutoPlay={true} audio={saturno} volume={0.4}></Audio>
                 <div className="home-container">
