@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "65a35c1ab725fb506538"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "dcfe422e15dd44798456"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -38348,7 +38348,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__("./node_modules/react/index.js");
 const react_dom_1 = __webpack_require__("./node_modules/react-dom/index.js");
 const ReactTransitionGroup = __webpack_require__("./node_modules/react-addons-transition-group/index.js");
-const Home_1 = __webpack_require__("./src/views/Home.tsx");
+const Home_1 = __webpack_require__("./src/views/Home/Home.tsx");
 const PreloadingScreen_1 = __webpack_require__("./src/views/Preloading-screen/PreloadingScreen.tsx");
 __webpack_require__("./src/app.scss");
 class App extends React.Component {
@@ -38380,17 +38380,10 @@ react_dom_1.render(React.createElement(App, null), document.getElementById('app'
 
 /***/ }),
 
-/***/ "./src/assets/images/betocel.png":
+/***/ "./src/assets/images/home-lg.jpeg":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "src/assets/images/betocel.png";
-
-/***/ }),
-
-/***/ "./src/assets/images/welcome3.png":
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "src/assets/images/welcome3.png";
+module.exports = __webpack_require__.p + "src/assets/images/home-lg.jpeg";
 
 /***/ }),
 
@@ -38401,15 +38394,22 @@ module.exports = __webpack_require__.p + "sounds/glitch.mp3";
 
 /***/ }),
 
-/***/ "./src/components/FooterHome.tsx":
+/***/ "./src/components/BoxSocial/BoxSocial.scss":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./src/components/BoxSocial/BoxSocial.tsx":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__("./node_modules/react/index.js");
-__webpack_require__("./src/styles/components/footerHome.scss");
-class FooterHome extends React.Component {
+__webpack_require__("./src/components/BoxSocial/BoxSocial.scss");
+class BoxSocial extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -38419,30 +38419,30 @@ class FooterHome extends React.Component {
                     url: 'https://github.com/Beto23'
                 },
                 {
-                    icon: 'icon-twitter',
-                    url: 'https://twitter.com/'
-                },
-                {
-                    icon: 'icon-facebook',
-                    url: 'https://www.facebook.com/beto.cordobalugo'
-                },
-                {
                     icon: 'icon-linkedin',
                     url: 'https://www.linkedin.com/in/jose-alberto-cordoba-lugo-4031a911a/'
+                },
+                {
+                    icon: 'icon-codepen',
+                    url: 'https://codepen.io/jbeto23/'
+                },
+                {
+                    icon: 'icon-twitter',
+                    url: 'https://twitter.com/BetoCL23'
                 },
             ]
         };
     }
     render() {
-        return (React.createElement("footer", { className: "footerHome" },
-            React.createElement("ul", { className: "footerHome__links" }, this.state.links.map((link, key) => {
-                return (React.createElement("li", { key: key, className: "footerHome__link" },
+        return (React.createElement("div", { className: "box-social" },
+            React.createElement("ul", { className: "box-social__links" }, this.state.links.map((link, key) => {
+                return (React.createElement("li", { key: key, className: "box-social__link" },
                     React.createElement("a", { href: link.url, target: "_blank" },
                         React.createElement("i", { className: link.icon }))));
             }))));
     }
 }
-exports.default = FooterHome;
+exports.default = BoxSocial;
 
 
 /***/ }),
@@ -38486,21 +38486,7 @@ exports.default = BackgroundMove;
 
 /***/ }),
 
-/***/ "./src/styles/components/footerHome.scss":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./src/styles/pages/home.scss":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./src/views/Home.tsx":
+/***/ "./src/views/Home/Home.tsx":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38508,14 +38494,16 @@ exports.default = BackgroundMove;
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__("./node_modules/react/index.js");
 const gsap_1 = __webpack_require__("./node_modules/gsap/TweenMax.js");
-__webpack_require__("./src/styles/pages/home.scss");
-const welcomeLarge = __webpack_require__("./src/assets/images/welcome3.png");
-const welcomeDefault = __webpack_require__("./src/assets/images/betocel.png");
-const FooterHome_1 = __webpack_require__("./src/components/FooterHome.tsx");
+//styles
+__webpack_require__("./src/views/Home/home.scss");
+//images
+const homeLg = __webpack_require__("./src/assets/images/home-lg.jpeg");
+//Components
 const BackgroundMove_1 = __webpack_require__("./src/scripts/components/BackgroundMove.ts");
+const BoxSocial_1 = __webpack_require__("./src/components/BoxSocial/BoxSocial.tsx");
 class Home extends React.Component {
     componentDidMount() {
-        const bgUrl = 'https://static.pexels.com/photos/735810/pexels-photo-735810.jpeg';
+        const bgUrl = homeLg;
         let bg = new BackgroundMove_1.default(this.container, bgUrl);
     }
     componentWillReceiveProps(nextProps) {
@@ -38527,17 +38515,22 @@ class Home extends React.Component {
     render() {
         let { isHidden } = this.props;
         return (React.createElement("section", { className: "home", ref: c => this.container = c },
-            React.createElement("article", { className: "home-container" },
-                React.createElement("picture", null,
-                    React.createElement("source", { srcSet: welcomeLarge, media: "(min-width: 670px)" }),
-                    React.createElement("source", { srcSet: welcomeDefault }),
-                    React.createElement("img", { className: "home-container-img", src: welcomeLarge, alt: "" })),
-                React.createElement("p", { className: "home-container-text" }, "I'm a Front-End web developer based in Saltillo Coahuila, Mexico. I like to work with the latest tools and methodologies by keeping up to date with current trends."),
-                React.createElement(FooterHome_1.default, null))));
+            React.createElement("div", { className: "home__box-title" },
+                React.createElement("h1", { className: "home__title" }, "Alberto"),
+                React.createElement("span", { className: "home__subtitle" }, "Front-End Web Developer")),
+            React.createElement(BoxSocial_1.default, null),
+            ">"));
     }
 }
 exports.default = Home;
 
+
+/***/ }),
+
+/***/ "./src/views/Home/home.scss":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -38581,12 +38574,12 @@ class PreloadingScreen extends React.Component {
     }
     componentWillLeave(callback) {
         const el = this.container;
-        gsap_1.TweenLite.to(el, 2, { x: "-100%", opacity: 0, ease: "Power3.easeInOut", onComplete: callback });
+        gsap_1.TweenLite.to(el, 2, { x: "-100%", opacity: 0.7, ease: "Power3.easeInOut", onComplete: callback });
         clearInterval(this.audioInterval);
     }
     componentDidMount() {
         const el = this.container;
-        gsap_1.TweenLite.fromTo(el, 1, { opacity: 0, backgroundColor: "black" }, { opacity: 1, backgroundColor: "black", ease: "Power3.easeInOut", onComplete: this.handleAudio });
+        gsap_1.TweenLite.fromTo(el, 1, { opacity: 0, backgroundColor: "white" }, { opacity: 1, backgroundColor: "white", ease: "Power3.easeInOut", onComplete: this.handleAudio });
     }
     render() {
         return (React.createElement("div", { className: "full-screen", ref: c => this.container = c },
